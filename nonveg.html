@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Order</title>
+         <meta charset="UTF-8">
+            <meta http-equiv="ScreenOrientation" content="autoRotate:disabled">
+        <meta name="viewport" content="width=device-width , initial-scale=1, user-scalable = 0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+        <link rel="stylesheet" href="nonveg.css" />
+    </head>
+    <body>
+        <h1>Non-Veg Thali</h1>
+        <p>Non-Veg Thali Per Plate includes:</p>
+        <ul>
+            <li>Rice</li>
+            <li>Lentil(Daal)</li>
+            <li>1 type of vegetable</li>
+            <li>Bhaja</li>
+            <li>Fish/Egg/Chicken/Mutton (Your Choice)</li>
+        </ul>
+        <p>Please Choose any non-veg item from below</p> <hr>
+        <div class="addon">
+            <p class="p">Non-Veg Thali Rs 60/- <span class="decrement-unicode" id="dec1">&minus;</span> <span class="no-of-item" id="no-of-item1">1</span> <span class="increment-unicode" id="inc1">&plus;</span></p>
+            <p class="p">Egg(1pc) Rs 10/- <span class="decrement-unicode" id="dec2">&minus;</span> <span class="no-of-item" id="no-of-item2">0</span> <span class="increment-unicode" id="inc2">&plus;</span></p>
+            <p class="p">Chicken(3pc) Rs 30/- <span class="decrement-unicode" id="dec3">&minus;</span> <span class="no-of-item" id="no-of-item3">0</span> <span class="increment-unicode" id="inc3">&plus;</span></p>
+            <p class="p">Mutton(3pc) Rs 140/- <span class="decrement-unicode" id="dec4">&minus;</span> <span class="no-of-item" id="no-of-item4">0</span> <span class="increment-unicode" id="inc4">&plus;</span></p>
+            <p class="p">Roti Rs 6/- <span class="decrement-unicode" id="dec5">&minus;</span> <span class="no-of-item" id="no-of-item5">0</span> <span class="increment-unicode" id="inc5">&plus;</span></p>
+         </div>
+         <p class="total">Total <span id="total">0</span></p>
+         <button type="submit" id="btn">Order Now</button>
+    </body>
+    <script>
+        var count = 1;
+        var total = document.getElementById("total");
+        total.innerHTML = 60;
+        const inc1 = document.getElementById("inc1");
+        const dec1 = document.getElementById("dec1");
+        const noi1 = document.getElementById("no-of-item1");
+        var total1 = 60;
+        noi1.innerHTML = count;
+
+        const handleIncrement = () => {
+        count++;
+        total1 = 60*count;
+        noi1.innerHTML = count;
+        total.innerHTML = total1 + total2 + total3 + total4 + total5;
+    }
+    
+    const handleDecrement = () => {
+    if(count>1)
+        count--;
+        total1 = 60*count;
+    noi1.innerHTML = count;
+    total.innerHTML = total1 + total2 + total3 + total4 + total5;
+    }
+
+        inc1.addEventListener("click", handleIncrement);
+        dec1.addEventListener("click", handleDecrement);
+
+        const inc2 = document.getElementById("inc2");
+        const dec2 = document.getElementById("dec2");
+        const noi2 = document.getElementById("no-of-item2");
+        var total2 = 0;
+        var count2 = 0;
+        noi2.innerHTML = count2;
+
+        const handleIncrement2 = () => {
+        count2++;
+        total2 = 10*count2;
+        noi2.innerHTML = count2;
+        total.innerHTML = total1 + total2 + total3 + total4 + total5;
+    }
+    
+    const handleDecrement2 = () => {
+    if(count2>0)
+        count2--;
+        total2 = 10*count2;
+    noi2.innerHTML = count2;
+    total.innerHTML = total1 + total2 + total3 + total4 + total5;
+    }
+
+        inc2.addEventListener("click", handleIncrement2);
+        dec2.addEventListener("click", handleDecrement2);
+
+        const inc3 = document.getElementById("inc3");
+        const dec3 = document.getElementById("dec3");
+        const noi3 = document.getElementById("no-of-item3");
+        var total3 = 0;
+        var count3 = 0;
+        noi3.innerHTML = count3;
+
+        const handleIncrement3 = () => {
+        count3++;
+        total3 = 30*count3;
+        noi3.innerHTML = count3;
+        total.innerHTML = total1 + total2 + total3 + total4 + total5;
+    }
+    
+    const handleDecrement3 = () => {
+    if(count3>0)
+        count3--;
+        total3 = 30*count3;
+    noi3.innerHTML = count3;
+    total.innerHTML = total1 + total2 + total3 + total4 + total5;
+    }
+
+        inc3.addEventListener("click", handleIncrement3);
+        dec3.addEventListener("click", handleDecrement3);
+
+        
+        const inc4 = document.getElementById("inc4");
+        const dec4 = document.getElementById("dec4");
+        const noi4 = document.getElementById("no-of-item4");
+        var total4 = 0;
+        var count4 = 0;
+        noi4.innerHTML = count4;
+
+        const handleIncrement4 = () => {
+        count4++;
+        total4 = 140*count4;
+        noi4.innerHTML = count4;
+        total.innerHTML = total1 + total2 + total3 + total4 + total5;
+    }
+    
+    const handleDecrement4 = () => {
+    if(count4>0)
+        count4--;
+        total4 = 140*count4;
+    noi4.innerHTML = count4;
+    total.innerHTML = total1 + total2 + total3 + total4 + total5;
+    }
+
+        inc4.addEventListener("click", handleIncrement4);
+        dec4.addEventListener("click", handleDecrement4);
+
+        
+        const inc5 = document.getElementById("inc5");
+        const dec5 = document.getElementById("dec5");
+        const noi5 = document.getElementById("no-of-item5");
+        var total5 = 0;
+        var count5 = 0;
+        noi5.innerHTML = count5;
+
+        const handleIncrement5 = () => {
+        count5++;
+        total5 = 6*count5;
+        noi5.innerHTML = count5;
+        total.innerHTML = total1 + total2 + total3 + total4 + total5;
+    }
+    
+    const handleDecrement5 = () => {
+    if(count5>0)
+        count5--;
+        total5 = 6*count5;
+    noi5.innerHTML = count5;
+    total.innerHTML = total1 + total2 + total3 + total4 + total5;
+    }
+
+        inc5.addEventListener("click", handleIncrement5);
+        dec5.addEventListener("click", handleDecrement5);
+
+        document.getElementById("btn").addEventListener("click", function(){
+            var amount = document.getElementById("total").innerText;
+            console.log(amount);
+            sessionStorage.setItem("amount1", amount);
+            window.location = "orderpage.html";
+        })
+
+        </script>
+</html>

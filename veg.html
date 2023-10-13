@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Order</title>
+         <meta charset="UTF-8">
+            <meta http-equiv="ScreenOrientation" content="autoRotate:disabled">
+        <meta name="viewport" content="width=device-width , initial-scale=1, user-scalable = 0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+        <link rel="stylesheet" href="veg.css" />
+    </head>
+    <body>
+        <h1>Veg Thali</h1>
+        <p>Veg Thali Per Plate includes:</p>
+        <ul>
+            <li>Rice</li>
+            <li>Lentil(Daal)</li>
+            <li>1 type of vegetable</li>
+            <li>Bhaja</li>
+        </ul>
+        <p>You can also add Roti as per your need.</p> <hr>
+        <div class="addon">
+            <p class="p">Veg Thali Rs 60/- <span class="decrement-unicode" id="dec1">&minus;</span> <span class="no-of-item" id="no-of-item1">1</span> <span class="increment-unicode" id="inc1">&plus;</span></p>
+            <p class="p">Roti Rs 6/- <span class="decrement-unicode" id="dec2">&minus;</span> <span class="no-of-item" id="no-of-item2">0</span> <span class="increment-unicode" id="inc2">&plus;</span></p>
+         </div>
+         <p class="total">Total <span id="total">0</span></p>
+         <button type="submit" id="btn">Order Now</button>
+    </body>
+    <script>
+        var count = 1;
+        var total = document.getElementById("total");
+        total.innerHTML = 60;
+        const inc1 = document.getElementById("inc1");
+        const dec1 = document.getElementById("dec1");
+        const noi1 = document.getElementById("no-of-item1");
+        var total1 = 0;
+        noi1.innerHTML = count;
+
+        const handleIncrement = () => {
+        count++;
+        total1 = 60*count;
+        noi1.innerHTML = count;
+        total.innerHTML = total1 + total2;
+    }
+    
+    const handleDecrement = () => {
+    if(count>1)
+        count--;
+        total1 = 60*count;
+    noi1.innerHTML = count;
+    total.innerHTML = total1 + total2;
+    }
+
+        inc1.addEventListener("click", handleIncrement);
+        dec1.addEventListener("click", handleDecrement);
+
+        const inc2 = document.getElementById("inc2");
+        const dec2 = document.getElementById("dec2");
+        const noi2 = document.getElementById("no-of-item2");
+        var total2 = 0;
+        var count2 = 0;
+        noi2.innerHTML = count2;
+
+        const handleIncrement2 = () => {
+        count2++;
+        total2 = 6*count2;
+        noi2.innerHTML = count2;
+        total.innerHTML = total1 + total2;
+    }
+    
+    const handleDecrement2 = () => {
+    if(count2>0)
+        count2--;
+        total2 = 6*count2;
+    noi2.innerHTML = count2;
+    total.innerHTML = total1 + total2;
+    }
+
+        inc2.addEventListener("click", handleIncrement2);
+        dec2.addEventListener("click", handleDecrement2);
+
+        document.getElementById("btn").addEventListener("click", function(){
+            var amount = document.getElementById("total").innerText;
+            console.log(amount);
+            sessionStorage.setItem("amount1", amount);
+            window.location = "orderpage.html";
+        })
+
+        </script>
+</html>
